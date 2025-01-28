@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/devourer66/argo-examples.git
+    targetRevision: HEAD
+    path: helm-webapp
+    helm:
+      valueFiles:
+        - values-prod.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test-prod
