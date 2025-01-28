@@ -20,14 +20,8 @@ spec:
       automated: 
         prune: true 
         selfHeal: true 
-        allowEmpty: false 
       syncOptions:     
-      - Validate=false 
       - CreateNamespace=true 
-      - PrunePropagationPolicy=foreground
-      - PruneLast=true 
-      - RespectIgnoreDifferences=true 
-      - ApplyOutOfSyncOnly=true 
       managedNamespaceMetadata: 
         labels: 
           createdBy: argocd
